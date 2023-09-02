@@ -421,6 +421,12 @@ void GcodeSuite::process_parsed_command(const bool no_ok/*=false*/) {
         case 5: M5(); break;                                      // M5: Turn OFF Laser | Spindle
       #endif
 
+      #ifdef LASER_ON_FAN_PIN
+        case 3: SetLaserOnFan(); break;                              // M3: Turn ON Laser | Spindle (clockwise), set Power | Speed
+        case 4: SetLaserOnFan(); break;                              // M4: Turn ON Laser | Spindle (counter-clockwise), set Power | Speed
+        case 5: M107(); break;                                       // M5: Turn OFF Laser | Spindle
+      #endif
+
       #if ENABLED(COOLANT_CONTROL)
         #if ENABLED(COOLANT_MIST)
           case 7: M7(); break;                                    // M7: Mist coolant ON

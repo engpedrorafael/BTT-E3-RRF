@@ -587,6 +587,7 @@ private:
   #if HAS_FAN
     static void M106();
     static void M107();
+    static void SetLaserOnFan();
   #endif
 
   #if DISABLED(EMERGENCY_PARSER)

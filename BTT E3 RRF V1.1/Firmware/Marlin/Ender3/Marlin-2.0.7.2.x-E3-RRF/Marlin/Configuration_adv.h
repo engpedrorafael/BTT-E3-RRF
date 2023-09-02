@@ -468,7 +468,7 @@
  *   USE_OCR2A_AS_TOP sacrifices duty cycle control resolution to achieve this broader range of frequencies.
  */
 #if ENABLED(FAST_PWM_FAN)
-  //#define FAST_PWM_FAN_FREQUENCY 31400
+  #define FAST_PWM_FAN_FREQUENCY 1000
   //#define USE_OCR2A_AS_TOP
 #endif
 
@@ -1885,7 +1885,7 @@
 //
 // G2/G3 Arc Support
 //
-//#define ARC_SUPPORT               // Disable this feature to save ~3226 bytes
+#define ARC_SUPPORT               // Disable this feature to save ~3226 bytes
 #if ENABLED(ARC_SUPPORT)
   #define MM_PER_ARC_SEGMENT      1 // (mm) Length (or minimum length) of each arc segment
   //#define ARC_SEGMENTS_PER_R    1 // Max segment length, MM_PER = Min
@@ -3184,6 +3184,7 @@
  * NOTE: This option sacrifices some cooling fan speed options.
  */
 //#define LASER_SYNCHRONOUS_M106_M107
+#define LASER_ON_FAN_PIN
 
 /**
  * Coolant Control
